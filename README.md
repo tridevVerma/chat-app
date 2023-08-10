@@ -1,14 +1,14 @@
 ## Screenshots
 
-![Screenshot (74)](https://github.com/tridevVerma/chat-app/assets/47333699/f15ac783-016f-4421-a16d-df1b92d416e8)
+![Screenshot (74)](https://github.com/tridevVerma/chat-app/assets/47333699/d9f00810-6232-46fd-a984-bbd23a789957)
 
-![Screenshot (75)](https://github.com/tridevVerma/chat-app/assets/47333699/a405b955-cbf3-4766-ba9d-53dacb725401)
+![Screenshot (75)](https://github.com/tridevVerma/chat-app/assets/47333699/00995c66-c8a7-489a-8ce0-fb6e95d961c6)
 
-![Screenshot (76)](https://github.com/tridevVerma/chat-app/assets/47333699/93dfe72f-65c1-4288-9683-5d99c8d23c8f)
+![Screenshot (76)](https://github.com/tridevVerma/chat-app/assets/47333699/ec076fd5-0343-45f5-835c-b271c8613658)
 
-![Screenshot (77)](https://github.com/tridevVerma/chat-app/assets/47333699/b5482950-98bf-4078-93b2-c74b64788e21)
+![Screenshot (77)](https://github.com/tridevVerma/chat-app/assets/47333699/7f3d31a0-daca-4fef-bb57-281e1a809e35)
 
-![Screenshot (78)](https://github.com/tridevVerma/chat-app/assets/47333699/b28c157c-2678-4b8d-971f-0c7b3f88b448)
+![Screenshot (78)](https://github.com/tridevVerma/chat-app/assets/47333699/e6df4a8d-293a-449f-a9a6-8beb80d28fac)
 
 ## Getting Started
 
