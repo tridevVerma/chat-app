@@ -1,13 +1,322 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(210, 40%, 97%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 30vw 1fr;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sidebar {
+  border-right: 1px solid hsl(210, 10%, 70%);
+  background-color: hsl(198, 80%, 94%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.heading {
+  padding: 1rem 1.5rem;
+  background-color: hsl(220, 60%, 10%);
+  color: hsl(210, 40%, 97%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+h4 {
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+p {
+  color: hsl(210, 15%, 70%);
+}
+
+.heading .avatar-title {
+  display: flex;
+  align-items: center;
+}
+
+.heading .avatar-title .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: hsl(200, 78%, 70%);
+  margin-right: 1rem;
+}
+
+.heading .avatar-title .avatar::before {
+  content: attr(data-letters);
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-conversation {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: hsl(200, 80%, 70%);
+}
+
+.add-conversation h4 {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.add-conversation button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+.group-conversations ul li {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.group-conversations ul li:nth-child(2) {
+  background-color: hsl(200, 78%, 80%);
+}
+
+.group-conversations ul li .group-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 24%;
+  padding: 1.2rem;
+  background-color: hsl(198, 80%, 99%);
+  margin-right: 1.5rem;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+/* MAIN SECTION */
+
+.Main {
+  background-color: hsl(198, 60%, 94%);
+  position: relative;
+  height: 100%;
+}
+
+.Main .active-members span {
+  margin-left: 1rem;
+}
+
+.conversation-window {
+  position: absolute;
+  bottom: 2.5rem;
+  padding: 1rem;
+  max-height: 77vh;
+  overflow-y: scroll;
+}
+
+.conversation-window::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.conversation-window::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.conversation-window::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: hsl(200, 88%, 65%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.conversation-window ul li .msg-info {
+  display: flex;
+  align-items: center;
+}
+
+.conversation-window ul li .msg-info p {
+  display: flex;
+  align-items: flex-end;
+  color: hsl(220, 60%, 10%);
+}
+
+.conversation-window ul li .msg-info p span {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  color: hsl(210, 10%, 70%);
+  font-weight: 600;
+}
+
+.conversation-window > ul > li > .msg-info > span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(9, 80%, 60%);
+  color: hsl(198, 50%, 98%);
+  margin-right: 0.6rem;
+}
+
+.conversation-window > ul > li > .msg-content {
+  max-width: 90%;
+  width: fit-content;
+  padding: 0.9rem;
+  background-color: hsl(198, 50%, 98%);
+  border-radius: 12px;
+  border-top-left-radius: 0px;
+  margin-left: 3.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-window > ul > li > .msg-content > p {
+  color: hsl(220, 60%, 10%);
+  font-size: 0.9rem;
+}
+
+.conversation-window > ul > li > .msg-content > button.like-msg,
+.conversation-window > ul > li > .msg-content > button.liked-msg {
+  padding: 0.4rem;
+  border: none;
+  color: hsl(200, 88%, 65%);
+  border-radius: 5px;
+  margin-top: 0.6rem;
+  align-self: flex-end;
+}
+
+.conversation-window > ul > li > .msg-content > button.liked-msg {
+  color: hsl(198, 50%, 98%);
+  background-color: hsl(200, 88%, 65%);
+}
+
+.conversation-window > ul > li > .msg-content > button > span {
+  margin-left: 0.5rem;
+}
+
+.msg-box {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+}
+
+.msg-box > .emoji-selecter {
+  font-size: 1.5rem;
+  border: none;
+  margin-right: 0.8rem;
+}
+
+.msg-box > .users-list-toggler {
+  font-size: 1.2rem;
+  border: none;
+  margin-right: 0.8rem;
+}
+
+.users-list {
+  padding: 1rem;
+  padding-bottom: 0rem;
+  position: absolute;
+  bottom: 3rem;
+  left: 3.5rem;
+  background-color: hsl(220, 60%, 10%);
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+}
+.users-list li {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(9, 80%, 60%);
+  color: hsl(198, 50%, 98%);
+  margin-right: 0.6rem;
+}
+
+.msg-box form {
+  position: relative;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+}
+
+.msg-box form > .emoji-picker {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  left: -4.5rem;
+}
+
+.msg-box form input {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: inset -4px 4px 6px -3px rgba(0, 0, 0, 0.4),
+    inset 4px -2px 6px -2px rgba(180, 180, 180, 0.4);
+  margin-right: 0.8rem;
+  outline: none;
+}
+
+.msg-box form button {
+  align-self: stretch;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  background-color: hsl(200, 88%, 65%);
+  color: hsl(198, 80%, 99%);
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.msg-box form button span {
+  margin-right: 0.6rem;
 }
