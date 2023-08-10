@@ -1,3 +1,45 @@
+## Getting Started
+
+- Clone this project
+- Start by installing npm if you don't have them already.
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/tridevVerma/chat-app.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+## Folder Structure
+
+```
+CHAT-PROJECT/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   ├── logo192.png
+│   ├── logo512.png
+|
+├── src/
+│   ├── components/
+│   │   ├── Main.jsx
+│   │   ├── Sidebar.jsx
+│   │   └── ...
+│   ├── App.jsx
+│   ├── index.css
+│   └── index.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
